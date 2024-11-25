@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SlowaSamloglosekPalindrom.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="20">
+            <Entry x:Name="entZdanie"/>
+
+            <Button Text="policz słowa"
+                    Clicked="onSlowaClicked"/>
+            <Button Text="policz samogłoski"
+                    Clicked="onSamoClicked"/>
+            <Button Text="czy to jest palindrom?"
+                    Clicked="onPalinClicked"/>
+            <HorizontalStackLayout>
+                <Entry x:Name="entAn1"/>
+                <Entry x:Name="entAn2"/>
+            </HorizontalStackLayout>
+            <Button Text="czy anagram?"
+                    Clicked="onAnagClicked"/>
+
+            <Label x:Name="lblResults"
+                   FontSize="25"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

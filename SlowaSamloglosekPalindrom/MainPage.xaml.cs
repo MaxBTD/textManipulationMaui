@@ -21,21 +21,28 @@
 
         private void onAnagClicked(object sender, EventArgs e)
         {
-            if (!String.IsNullOrEmpty(entZdanie.Text))
+            if (!String.IsNullOrEmpty(entAn1.Text) && !String.IsNullOrEmpty(entAn2.Text))
             {
                 string anag1 = !String.IsNullOrEmpty(entAn1.Text) ? entAn1.Text.Trim().Replace("  ", "").Replace(" ", "").ToLower() : "";
                 string anag2 = !String.IsNullOrEmpty(entAn1.Text) ? entAn2.Text.Trim().Replace("  ", " ").Replace(" ", "").ToLower() : "";
-                char[] znakiAnag1 = [];
+                char[] znakiAnag1 = anag1.ToCharArray();
 
-                if(anag1.Length == anag2.Length)
+                if (anag1.Length == anag2.Length)
                 {
-                    for (int i = 0; i < anag1.Length; i++)
+                    foreach(char c in znakiAnag1)
                     {
-                        znakiAnag1.Append(anag1[i]);
+                        for(int i = 0; i < anag2.Length; i++)
+                        {
+                            if (anag2[i] == c)
+                            {
+                                anag2 = anag2.Replace(c, ' ');
+                            }
+                        }
+                        
                     }
                 }
 
-                lblResults.Text = znakiAnag1.ToString();
+                lblResults.Text = String.IsNullOrWhiteSpace(anag2) ? "Wyrazy są anagrami" : "Wyrazy nie są anagrami";
             }
         }
 
@@ -48,7 +55,7 @@
                 odwrotZdanie += zdanie[i];
             }
 
-            lblResults.Text = odwrotZdanie == zdanie ? $"Tak {odwrotZdanie}" : $"Nie {odwrotZdanie}"; 
+            lblResults.Text = odwrotZdanie == zdanie ? $"Tak" : $"Nie"; 
         }
 
         private void onSamoClicked(object sender, EventArgs e)

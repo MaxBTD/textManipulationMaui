@@ -14,9 +14,28 @@
                     Clicked="onSamoClicked"/>
             <Button Text="czy to jest palindrom?"
                     Clicked="onPalinClicked"/>
-            <HorizontalStackLayout>
-                <Entry x:Name="entAn1"/>
-                <Entry x:Name="entAn2"/>
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Entry x:Name="entAn1"
+                           WidthRequest="250"
+                           Grid.Column="0"
+                            Grid.Row="0"
+                           />
+                    <Entry x:Name="entAn2"
+                           WidthRequest="250"
+                           Grid.Column="2"
+                           Grid.Row="0"
+                           />
+                </Grid>
+                    
             </HorizontalStackLayout>
             <Button Text="czy anagram?"
                     Clicked="onAnagClicked"/>

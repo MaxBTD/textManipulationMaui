@@ -21,7 +21,7 @@
 
         private void onAnagClicked(object sender, EventArgs e)
         {
-            if (!String.IsNullOrEmpty(entAn1.Text) && !String.IsNullOrEmpty(entAn2.Text))
+            if (!String.IsNullOrEmpty(entAn1.Text.Trim()) && !String.IsNullOrEmpty(entAn2.Text.Trim()))
             {
                 string anag1 = !String.IsNullOrEmpty(entAn1.Text) ? entAn1.Text.Trim().Replace("  ", "").Replace(" ", "").ToLower() : "";
                 string anag2 = !String.IsNullOrEmpty(entAn1.Text) ? entAn2.Text.Trim().Replace("  ", " ").Replace(" ", "").ToLower() : "";
